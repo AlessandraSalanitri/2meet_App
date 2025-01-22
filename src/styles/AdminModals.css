@@ -1,0 +1,136 @@
+/* Shared Modal Styles: AdminModals.css */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000; 
+}
+
+.modal-content {
+  position: relative; /* Ensure relative positioning for scrolling */
+  background: #fff;
+  padding: 40px; /* Increased padding for better spacing */
+  border-radius: 12px; /* Slightly rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow for better focus */
+  width: 95%; /* Slightly larger width for responsiveness */
+  max-width: 1200px; /* Increase maximum width */
+  max-height: 90%; /* Prevent overflow */
+  overflow-y: auto; /* Enable scrolling when content exceeds modal height */
+  text-align: center;
+  z-index: 2100; /* Ensure it stays above other modals if nested */
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.modal-content .form-group {
+  margin-bottom: 20px; /* Increased spacing between form groups */
+  text-align: left;
+}
+
+.modal-content .form-group label {
+  display: block;
+  margin-bottom: 8px; /* Slightly more spacing between label and input */
+  font-weight: bold;
+  color: #333; /* Darker label text for better readability */
+}
+
+.modal-content .form-group input,
+.modal-content .form-group textarea,
+.modal-content .form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px; /* Slightly more rounded input fields */
+  font-size: 1rem;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif; /* Ensure consistent font */
+}
+
+.modal-content textarea {
+  resize: vertical;
+  min-height: 100px; /* Slightly taller default height */
+}
+
+.modal-content select {
+  cursor: pointer;
+  background-color: white;
+}
+
+.modal-content select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.modal-actions button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.add-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.save-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.delete-button {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.cancel-button {
+  background-color: #6c757d; /* Slightly darker for better contrast */
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Ensure proper spacing between buttons */
+.modal-actions button + button {
+  margin-left: 10px;
+}
+
+/* Make the modal content slightly larger on larger screens */
+@media (min-width: 1024px) {
+  .modal-content {
+    padding: 50px;
+    max-width: 900px; /* Even larger on wide screens */
+  }
+
+  .modal-content h2 {
+    font-size: 2rem; /* Larger heading for better visibility */
+  }
+}
